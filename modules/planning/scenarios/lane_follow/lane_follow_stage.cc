@@ -109,6 +109,10 @@ void LaneFollowStage::RecordDebugInfo(ReferenceLineInfo* reference_line_info,
 
 Stage::StageStatus LaneFollowStage::Process(
     const TrajectoryPoint& planning_start_point, Frame* frame) {
+
+
+
+
   bool has_drivable_reference_line = false;
 
   ADEBUG << "Number of reference lines:\t"
@@ -169,6 +173,9 @@ Stage::StageStatus LaneFollowStage::Process(
 Status LaneFollowStage::PlanOnReferenceLine(
     const TrajectoryPoint& planning_start_point, Frame* frame,
     ReferenceLineInfo* reference_line_info) {
+
+  AERROR << ".........................." << "LaneFollowStage used !" << "\n"; 
+     
   if (!reference_line_info->IsChangeLanePath()) {
     reference_line_info->AddCost(kStraightForwardLineCost);
   }
@@ -178,6 +185,7 @@ Status LaneFollowStage::PlanOnReferenceLine(
 
   auto ret = Status::OK();
   for (auto* optimizer : task_list_) {
+    AERROR << ".........................." << optimizer->Name() << "\n";
     const double start_timestamp = Clock::NowInSeconds();
     ret = optimizer->Execute(frame, reference_line_info);
     if (!ret.ok()) {

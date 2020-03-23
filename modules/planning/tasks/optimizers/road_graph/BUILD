@@ -30,8 +30,12 @@ cc_library(
         "//modules/planning/common/speed:speed_data",
         "//modules/planning/math/curve1d:polynomial_curve1d",
         "//modules/planning/math/curve1d:quintic_polynomial_curve1d",
+        "//modules/planning/proto:dp_poly_path_config_proto",
         "//modules/planning/reference_line",
+        "//modules/planning/tasks/deciders/lane_change_decider:lane_change_decider",
         "@eigen",
     ],
 )
+
+
 cpplint()

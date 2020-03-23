@@ -32,6 +32,7 @@ cc_library(
         "//modules/planning/proto:planning_proto",
         "//modules/planning/reference_line",
         "//modules/planning/tasks/optimizers:path_optimizer",
+        "//modules/planning/tasks/optimizers/road_graph:road_graph",
         "@eigen",
     ],
 )

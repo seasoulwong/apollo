@@ -7,6 +7,8 @@
 
 --vehicle_config_path=/apollo/modules/common/data/vehicle_param.pb.txt
 
+--half_vehicle_width=0.43
+
 --log_dir=/apollo/data/log
 
 --use_navigation_mode=false
@@ -30,3 +32,5 @@
 --map_dir=/apollo/modules/map/data/apollo_map
 
 --map_dir=/apollo/modules/map/data/sunnyvale_big_loop
+
+--map_dir=/apollo/modules/map/data/apollo_map

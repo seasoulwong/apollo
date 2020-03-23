@@ -8,21 +8,10 @@ module_config {
       config_file_path: "/apollo/modules/perception/production/conf/perception/lidar/velodyne128_segmentation_conf.pb.txt"
       flag_file_path: "/apollo/modules/perception/production/conf/perception/perception_common.flag"
       readers {
-          channel: "/apollo/sensor/lidar128/compensator/PointCloud2"
-        }
-    }
-  }
-
- components {
-    class_name : "SegmentationComponent"
-    config {
-      name: "Velodyne16Segmentation"
-      config_file_path: "/apollo/modules/perception/production/conf/perception/lidar/velodyne16_segmentation_conf.pb.txt"
-      readers {
           channel: "/apollo/sensor/lidar16/compensator/PointCloud2"
         }
     }
- }
+  }
 
   components {
     class_name : "RecognitionComponent"
@@ -35,27 +24,6 @@ module_config {
     }
   }
 
-  components {
-    class_name: "RadarDetectionComponent"
-    config {
-      name: "FrontRadarDetection"
-      config_file_path: "/apollo/modules/perception/production/conf/perception/radar/front_radar_component_conf.pb.txt"
-      readers {
-          channel: "/apollo/sensor/radar/front"
-        }
-    }
-  }
-
-  components {
-    class_name: "RadarDetectionComponent"
-    config {
-      name: "RearRadarDetection"
-      config_file_path: "/apollo/modules/perception/production/conf/perception/radar/rear_radar_component_conf.pb.txt"
-      readers {
-          channel: "/apollo/sensor/radar/rear"
-        }
-    }
-  }
 
   components {
     class_name: "FusionComponent"

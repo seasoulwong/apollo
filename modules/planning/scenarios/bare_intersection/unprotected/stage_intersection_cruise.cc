@@ -29,6 +29,8 @@ namespace bare_intersection {
 
 Stage::StageStatus BareIntersectionUnprotectedStageIntersectionCruise::Process(
     const common::TrajectoryPoint& planning_init_point, Frame* frame) {
+
+  AERROR << "BareIntersectionUnprotectedStageIntersectionCruise used !" << "\n";    
   ADEBUG << "stage: IntersectionCruise";
   CHECK_NOTNULL(frame);
 

@@ -41,6 +41,8 @@ uint32_t BareIntersectionUnprotectedStageApproach::clear_counter_ = 0;
 
 Stage::StageStatus BareIntersectionUnprotectedStageApproach::Process(
     const TrajectoryPoint& planning_init_point, Frame* frame) {
+
+  AERROR << "BareIntersectionUnprotectedStageApproach used !" << "\n";    
   ADEBUG << "stage: Approach";
   CHECK_NOTNULL(frame);
 
