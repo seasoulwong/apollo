@@ -49,7 +49,7 @@ Status DpPolyPathOptimizer::Process(const SpeedData &speed_data,
   //读取配置文件，配置文件： modules/planning/conf/planning_config.pb.txt； 对应的proto文件 modules/planning/proto/dp_poly_path_config.proto
   const auto &dp_poly_path_config = config_.dp_poly_path_config();
   //实例化DpRoadGraph，将dp_poly_path_config、reference_line_info、speed_data存入对应的成员变量
-  DpRoadGraph dp_road_graph(dp_poly_path_config, *reference_line_info_,speed_data);
+  DpRoadGraph dp_road_graph(dp_poly_path_config, reference_line_info_,  speed_data);
   //对应的proto文件是 planning/proto/planning_internal.proto,这个是否是必须的？作用是？
   dp_road_graph.SetDebugLogger(reference_line_info_->mutable_debug());
   dp_road_graph.SetWaypointSampler(new WaypointSampler(dp_poly_path_config.waypoint_sampler_config()));

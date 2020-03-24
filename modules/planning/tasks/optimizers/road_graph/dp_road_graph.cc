@@ -40,17 +40,14 @@ namespace apollo {
 namespace planning {
 
 DpRoadGraph::DpRoadGraph(const DpPolyPathConfig &config,
-                         const ReferenceLineInfo &reference_line_info,
-                         const SpeedData &speed_data)
+                         ReferenceLineInfo* reference_line_info,
+                         const SpeedData &speed_data
+                         )
     : config_(config),
-      reference_line_info_(&reference_line_info),
-      reference_line_(reference_line_info.reference_line()),
-      speed_data_(speed_data) {
-    /*    
-    ReferenceLineInfo& ref_line_info = const_cast<ReferenceLineInfo &>(reference_line_info);
-    reference_line_info_ = &ref_line_info；
-    */
-}
+      reference_line_info_(reference_line_info),
+      reference_line_(reference_line_info_->reference_line()),
+      speed_data_(speed_data)
+      {}
 
 bool DpRoadGraph::FindPathTunnel(const common::TrajectoryPoint &init_point,
                                  const std::vector<const Obstacle *> &obstacles,

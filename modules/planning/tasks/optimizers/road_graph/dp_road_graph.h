@@ -43,8 +43,9 @@ namespace planning {
 class DpRoadGraph {
  public:
   DpRoadGraph(const DpPolyPathConfig &config,
-              const ReferenceLineInfo* reference_line_info,
-              const SpeedData &speed_data);
+              ReferenceLineInfo* reference_line_info,
+              const SpeedData &speed_data
+              );
 
   ~DpRoadGraph() = default;
 
