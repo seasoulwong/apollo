@@ -44,7 +44,7 @@
 #include "modules/planning/tasks/optimizers/piecewise_jerk_path/piecewise_jerk_path_optimizer.h"
 #include "modules/planning/tasks/optimizers/piecewise_jerk_speed/piecewise_jerk_speed_nonlinear_optimizer.h"
 #include "modules/planning/tasks/optimizers/piecewise_jerk_speed/piecewise_jerk_speed_optimizer.h"
-
+#include "modules/planning/tasks/optimizers/dp_poly_path/dp_poly_path_optimizer.h"
 #include "modules/planning/tasks/task.h"
 
 namespace apollo {
@@ -88,6 +88,11 @@ void TaskFactory::Init(const PlanningConfig& config) {
                          [](const TaskConfig& config) -> Task* {
                            return new PiecewiseJerkSpeedOptimizer(config);
                          });
+
+  task_factory_.Register(TaskConfig::DP_POLY_PATH_OPTIMIZER,
+                         [](const TaskConfig& config) -> Task* {
+                           return new DpPolyPathOptimizer(config);
+                         });                     
   task_factory_.Register(
       TaskConfig::PIECEWISE_JERK_NONLINEAR_SPEED_OPTIMIZER,
       [](const TaskConfig& config) -> Task* {

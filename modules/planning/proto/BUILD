@@ -586,4 +586,28 @@ proto_library(
     srcs = ["ipopt_return_status.proto"],
 )
 
+
+cc_proto_library(
+    name = "dp_poly_path_config_proto",
+    deps = [
+        ":dp_poly_path_config_proto_lib",
+    ],
+)
+proto_library(
+    name = "dp_poly_path_config_proto_lib",
+    srcs = ["dp_poly_path_config.proto"],
+    deps = [":waypoint_sampler_config_proto_lib"],
+)
+
+cc_proto_library(
+    name = "waypoint_sampler_config_proto",
+    deps = [
+        ":waypoint_sampler_config_proto_lib",
+    ],
+)
+proto_library(
+    name = "waypoint_sampler_config_proto_lib",
+    srcs = ["dp_poly_path_config.proto"],
+)
+
 cpplint()
