@@ -123,6 +123,7 @@ proto_library(
     srcs = ["planning_config.proto"],
     deps = [
         ":creep_decider_config_proto_lib",
+        ":dp_poly_path_config_proto_lib",
         ":dp_st_speed_config_proto_lib",
         ":lane_change_decider_config_proto_lib",
         ":navi_obstacle_decider_config_proto_lib",
@@ -595,8 +596,12 @@ cc_proto_library(
 )
 proto_library(
     name = "dp_poly_path_config_proto_lib",
-    srcs = ["dp_poly_path_config.proto"],
-    deps = [":waypoint_sampler_config_proto_lib"],
+    srcs = [
+        "dp_poly_path_config.proto",
+    ],
+    deps = [
+        ":waypoint_sampler_config_proto_lib",
+    ],
 )
 
 cc_proto_library(
@@ -607,7 +612,9 @@ cc_proto_library(
 )
 proto_library(
     name = "waypoint_sampler_config_proto_lib",
-    srcs = ["dp_poly_path_config.proto"],
+    srcs = [
+        "waypoint_sampler_config.proto",
+    ],
 )
 
 cpplint()
