@@ -18,7 +18,7 @@ default_task_config: {
     eval_time_interval: 0.1
     path_resolution: 1.0
     obstacle_ignore_distance: 20.0
-    obstacle_collision_distance: 0.5
+    obstacle_collision_distance: 0.3
     obstacle_risk_distance: 2.0
     obstacle_collision_cost: 1e8
     path_l_cost: 6.5
@@ -382,6 +382,6 @@ default_task_config: {
 default_task_config: {
   task_type: PATH_DECIDER
   path_decider_config{
-    static_obstacle_buffer: 0.3
+    static_obstacle_buffer: 0.1
   }
 }
